@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.bellevuedispatch.com/sitemap.xml
