@@ -14,3 +14,19 @@
     .finally(function(){b.disabled=false;b.textContent="Send me Thursday's issue";});
   });
 })();
+(function(){
+  var f=document.getElementById('adv');if(!f)return;
+  var m=document.getElementById('adv_msg'),b=f.querySelector('button');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();m.className='msg';
+    if(!f.business.value.trim()){m.className='msg err';m.textContent='Add the name of your business.';return;}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value)){m.className='msg err';m.textContent='Enter a valid email address.';return;}
+    b.disabled=true;b.textContent='Sending…';
+    var d={};['city','company_site','business','contact_name','email','website','category','slot','start_date','message'].forEach(function(k){d[k]=(f[k]&&f[k].value||'').trim();});d.page=location.pathname;
+    fetch('https://adreto031212.app.n8n.cloud/webhook/dispatch-sponsor-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+    .then(function(r){return r.json().catch(function(){return {ok:r.ok}})})
+    .then(function(j){ if(j&&j.ok!==false){m.className='msg ok';m.textContent="Your request is in. Adriano Tori answers by email within minutes, from adriano@rexmont.com.";f.reset();} else {throw new Error(j&&j.error||'error')} })
+    .catch(function(){m.className='msg err';m.textContent='That did not go through. Try again, or email adriano@rexmont.com.';})
+    .finally(function(){b.disabled=false;b.textContent='Request a Thursday';});
+  });
+})();

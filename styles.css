@@ -54,3 +54,18 @@ footer .legal{margin-top:28px;padding-top:18px;border-top:1px solid var(--rule)}
 .fine{font-size:13px;color:var(--muted)}
 .guide .card p{margin:0 0 8px}.guide .card a{color:var(--accent);font-weight:600;text-decoration:none}
 .deal{background:var(--bg2);border-radius:10px;padding:10px 12px}
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:8px 0 4px}
+.stat b{display:block;font-family:var(--serif);font-size:44px;font-weight:600;line-height:1.1}
+.stat span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.card p.price{font-family:var(--serif);font-size:28px;font-weight:600;margin:10px 0 8px!important;color:var(--ink)!important}
+.card p.price small{display:block;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--muted)}
+.offer{border:1px solid var(--accent);background:#fff7f4;border-radius:16px;padding:22px 26px;margin:0 0 8px}
+.offer p{margin:8px 0 0;color:var(--ink2)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:48px 24px 64px}
+.twocol h2{font-family:var(--serif);font-size:30px;font-weight:600;margin:0 0 16px}
+.steps,.adv-rules{padding-left:20px;margin:0 0 32px;color:var(--ink2)}.steps li,.adv-rules li{margin-bottom:10px}
+form.adv{max-width:none}form.adv textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1px solid #d4d4d8;border-radius:10px;background:#fff}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media(max-width:820px){.twocol{grid-template-columns:1fr;gap:16px}.stats{gap:24px}.stat b{font-size:34px}}
+.adv-hero{padding-left:24px;padding-right:24px}
+.card.partner{margin-bottom:24px}.offer+.offer{margin-top:16px}
