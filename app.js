@@ -25,8 +25,8 @@
     var d={};['city','company_site','business','contact_name','email','website','category','slot','start_date','message'].forEach(function(k){d[k]=(f[k]&&f[k].value||'').trim();});d.page=location.pathname;
     fetch('https://adreto031212.app.n8n.cloud/webhook/dispatch-sponsor-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
     .then(function(r){return r.json().catch(function(){return {ok:r.ok}})})
-    .then(function(j){ if(j&&j.ok!==false){m.className='msg ok';m.textContent="Your request is in. Adriano Tori answers by email within minutes, from adriano@rexmont.com.";f.reset();} else {throw new Error(j&&j.error||'error')} })
-    .catch(function(){m.className='msg err';m.textContent='That did not go through. Try again, or email adriano@rexmont.com.';})
+    .then(function(j){ if(j&&j.ok!==false){m.className='msg ok';m.textContent="Your request is in. Victoria Muller answers by email within minutes, from hello@bellevuedispatch.com.";f.reset();} else {throw new Error(j&&j.error||'error')} })
+    .catch(function(){m.className='msg err';m.textContent='That did not go through. Try again, or email hello@bellevuedispatch.com.';})
     .finally(function(){b.disabled=false;b.textContent='Request a Thursday';});
   });
 })();
