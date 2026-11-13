@@ -35,3 +35,8 @@
     .finally(function(){b.disabled=false;b.textContent='Request a Thursday';});
   });
 })();
+(function(){
+  // "Book this placement" on a price card picks that placement in the request form and brings the form into view
+  var f=document.getElementById('adv');if(!f)return;
+  document.querySelectorAll('a[data-slot]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();f.slot.value=a.getAttribute('data-slot');f.scrollIntoView({behavior:'smooth',block:'start'});f.business.focus({preventScroll:true});});});
+})();
